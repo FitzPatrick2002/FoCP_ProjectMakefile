@@ -1,0 +1,7 @@
+#include "AndGate.h"
+#include "OrGate.h"
+#include "NotGate.h"
+#include "NorGate.h"
+#include "NandGate.h"
+#include "XorGate.h"
+#include "XnorGate.h"

@@ -1,0 +1,54 @@
+----------------------------------- HELP -----------------------------------
+
+Program called without switches will print this file
+Available switches:
+-i -> file containing input combinations
+-u -> file containing the circuit
+-o -> file to which output of the program is to be written 
+
+After each switch name of a file with extension should be provided. 
+ex. -i input.txt -u circuit.txt -o output.txt
+-i -u circuit.txt -o output.txt <<-- this wil not work
+
+Example of an input file:
+1:0 6:0
+1:0 6:1
+1:1 6:0
+1:1 6:1
+
+a:b -> a - number of node, b - initial state on the node(1 or 0)
+Values for 'a' must be specified in the circuit file
+----------------------------------------------------------------------------
+Example of a circuit file:
+IN: 1 6
+OUT: 3
+NAND 1 6 5
+NAND 1 5 2
+NAND 5 6 4
+NAND 2 4 3
+
+<name of gate> a b c
+a - number of the 1'st input
+b - number of the 2'nd input 
+c - number of the output of the gate
+
+Available names for gates: AND OR NOT NAND NOR XOR XNOR
+
+IMPORTANT: 
+- NOT gate has only one output but we have to specify it with two inputs that are the same: 
+NOT 1 1 4
+- Providing a == c or b == c leads to an error (flip flops are not supported)
+----------------------------------------------------------------------------
+Example of an output file
+
+IN: 1:0 6:0 OUT: 3:0
+IN: 1:0 6:1 OUT: 3:1
+IN: 1:1 6:0 OUT: 3:1
+IN: 1:1 6:1 OUT: 3:0 
+
+IN: a:b OUT c:d
+a - input node number
+b - initial state on node 'a'
+c - output node number
+d - final state on the otput node
+

@@ -1,0 +1,6 @@
+IN: 1 6
+OUT: 3
+NAND 1 6 5
+NAND 1 5 2
+NAND 5 6 4
+NAND 2 4 3
